@@ -65,7 +65,7 @@ const moonTexture = new THREE.TextureLoader().load('images/moon.jpg');
 const normalTexture = new THREE.TextureLoader().load('images/normal.jpg');
 
 const moon = new THREE.Mesh(
-  new THREE.SphereGeometry(1, 16, 16),
+  new THREE.SphereGeometry(0.4, 32, 32),
   new THREE.MeshStandardMaterial({
     map: moonTexture,
     normalMap: normalTexture,
@@ -79,7 +79,6 @@ scene.add(moon);
 // Earth
 
 const earthTexture = new THREE.TextureLoader().load('img/earth_texture2.jpeg');
-const earthNormalTexture = new THREE.TextureLoader().load('images/earth_normal.jpg');
 
 const earth = new THREE.Mesh(
   new THREE.SphereGeometry(4, 64, 64),
@@ -97,7 +96,10 @@ const earthAtmosphere = new THREE.Mesh( geometryAtmosphere, materialAtmosphere )
 scene.add( earthAtmosphere );
 
 
-
+//camera light
+const cameraPointLight = new THREE.PointLight(0x71738a,5000);
+cameraPointLight.position.set(camera.position.x,camera.position.y,camera.position.z);
+scene.add(cameraPointLight);
 // const spaceTexture = new THREE.TextureLoader().load('images/bg_space_seamless.png');
 // scene.background = spaceTexture;
 
@@ -117,10 +119,14 @@ function moveCamera(){
   camera.position.x = t*-0.002;
   camera.position.y = t*-0.0002;
 
+  moon.position.z = 40 * Math.cos(t*0.00278);
+  moon.position.x = 40 * Math.sin(t*0.00285);
+
 }
 document.body.onscroll = moveCamera;
 
 moon.position.z = 0;
+moon.position.y = 0.5;
 moon.position.setX(-10);
 function animate(){
   t += 1;
@@ -131,18 +137,19 @@ function animate(){
   // diamond.position.x = 20*Math.cos(t*0.1)+0;
   // diamond.position.y = 20*Math.sin(t*0.01)+0;
   earth.rotation.y += 1*0.01;
-  moon.position.z = 40 * Math.cos(t*0.005);
-  moon.position.x = 40 * Math.sin(t*0.005)
   renderer.render( scene, camera );
-  console.log(camera.position.x, camera.position.y, camera.position.z);
+  // console.log(moon.position.x, moon.position.y, moon.position.z);
 };
 
+
+moon.position.x = 20;
+moon.position.z = 20;
 earth.position.y = 0;
 earth.position.z = -8;
 earthAtmosphere.position.x = earth.position.x
 earthAtmosphere.position.y = earth.position.y
 earthAtmosphere.position.z = earth.position.z
-
+//3.2 0 39.7
 
 camera.position.x = 0;
 camera.position.y = 0;

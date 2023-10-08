@@ -7,33 +7,70 @@
     <title>Eclipse Website</title>
   </head>
   <body>
-
+    <script>
+      window.addEventListener("load", ()=>{
+        const loader = document.getElementById("preloader");
+        loader.style.display = "none";
+      });
+    </script>
+    <div id="preloader">
+      <div class="chaotic-orbit"></div>
+    </div>
     <canvas id="bg"></canvas>   
-
     <main>
-
+      <nav role="navigation">
+        <div id="menuToggle">
+          <!--
+          A fake / hidden checkbox is used as click reciever,
+          so you can use the :checked selector on it.
+          -->
+          <input type="checkbox" />
+          
+          <!--
+          Some spans to act as a hamburger.
+          
+          They are acting like a real hamburger,
+          not that McDonalds stuff.
+          -->
+          <span></span>
+          <span></span>
+          <span></span>
+          
+          <!--
+          Too bad the menu has to be inside of the button
+          but hey, it's pure CSS magic.
+          -->
+          <ul id="menu">
+            <a href="index.html"><li>Home</li></a>
+            <a href="#"><li>About</li></a>
+            <a href="#"><li>Info</li></a>
+            <a href="#"><li>Contact</li></a>
+            <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
+          </ul>
+        </div>
+      </nav>
       <header>
-        <h1>What is an Eclipse?</h1>
-        <p>🚀 Welcome to my website!</p>
+        <h1>Eclipses: Perspective is Everything</h1>
+        <p>🚀 Lets Explore!</p>
       </header>
 
 
       <blockquote>
-        <p>I like making stuff and putting it on the internet</p>
+        <p>As you scroll down, watch the moon as it orbits around the Earth!</p>
       </blockquote>
 
       <section>
-        <h2>📜 Manifesto</h2>
+        <h2>🌘 What is an eclipse</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Eclipses, those enigmatic cosmic events, occur when the Sun, Moon, and Earth align in a celestial symphony. 
         </p>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          During a ☀️solar eclipse, the Moon gracefully steps between the Earth and the Sun, casting a shadow that briefly obscures daylight, creating a mesmerizing moment of twilight.
         </p>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          In contrast, a 🌙lunar eclipse unfolds when Earth positions itself between the Sun and the Moon, causing our planet's shadow to drape the Moon in a stunning reddish hue. Eclipses are celestial reminders of the profound interactions in our solar system, showcasing the intricate dance of heavenly bodies in the vast expanse of space.
         </p>
 
       </section>
@@ -54,7 +91,7 @@
       </section>
 
       <blockquote>
-        <p>The best way out is always through <br>-Robert Frost</p>
+        <p>An eclipse is one phenomenon that is actually more impressive from the ground.<br>Leroy Chiao</p>
       </blockquote>
 
       <section class="left">
@@ -76,7 +113,7 @@
       </section>
 
       <blockquote>
-        <p>Thanks for watching!</p>
+        <p>A Lunar Eclipse!</p>
       </blockquote>
 
 
